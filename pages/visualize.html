@@ -1,1 +1,15 @@
-visualize.html
+<div class="row">
+   <div id="map" class=".col-xs-6 .col-lg-4">This is the map div</div>
+   <script>
+   	  // Self-Executing Anonymous Function - learned at Google Earth Engine Summit 2015
+      (function () {
+        var mapCanvas = document.getElementById('map');
+        var mapOptions = {
+          center: new google.maps.LatLng(44.5403, -78.5463),
+          zoom: 5,
+          mapTypeId: google.maps.MapTypeId.ROADMAP
+        }
+        var map = new google.maps.Map(mapCanvas, mapOptions)
+      })();
+    </script>
+</div>
