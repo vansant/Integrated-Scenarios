@@ -21,7 +21,7 @@ $(document).ready(function() {
             nav_item.removeClass("active")
         } else {
         // Load the page corresponding to the nav item name
-        var nav_item_name = $(this).text().toLowerCase().trim().split(' ').join('_');
+        var nav_item_name = $(this).text().toLowerCase().trim().split(' ').join('-');
         var page_to_load = nav_item_name + ".html";
         console.log(page_to_load);
         $("#body-content").load("pages/" + page_to_load, function() {});
