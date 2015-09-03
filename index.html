@@ -31,6 +31,12 @@
   <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
+<!DOCTYPE html>
+<html>
+<head>
+  <title></title>
+</head>
+
 <body>
   <div class="container">
     <nav class="navbar navbar-default navbar-fixed-top">
@@ -38,52 +44,55 @@
         <a class="navbar-brand" href="#">Integrated Scenarios</a>
 
         <div class="navbar-header" id="nav-bar-button">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#nav-items">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
+          <button class="navbar-toggle collapsed" data-target="#nav-items"
+          data-toggle="collapse" type="button"><span class="sr-only">Toggle
+          navigation</span> <span class="icon-bar"></span> <span class=
+          "icon-bar"></span> <span class="icon-bar"></span></button>
         </div>
 
-        <ul class="nav navbar-nav pull-right collapse navbar-collapse" id="nav-items">
+        <ul class="nav navbar-nav pull-right collapse navbar-collapse" id=
+        "nav-items">
           <li class="active">
             <a href="#">Home</a>
-          </li>
-          <li>
-            <a href="#">Information</a>
-          </li>
+          </li> <!-- End Home -->
+
+          <li class="dropdown">
+            <a class="dropdown-toggle" data-toggle="dropdown" href=
+            "#">Information <span class="caret"></span></a>
+
+            <ul class="dropdown-menu">
+              <li>
+                <a href="#">Models</a>
+              </li>
+
+              <li>
+                <a href="#">Products</a>
+              </li>
+
+              <li>
+                <a href="#">Guidance</a>
+              </li>
+            </ul>
+          </li> <!-- End Information -->
+
           <li>
             <a href="#">Data</a>
-          </li>
+          </li> <!-- End Data -->
 
           <li>
             <a href="#">Visualize</a>
-          </li>
+          </li> <!-- End Visualize -->
 
           <li>
             <a href="#">Contact</a>
-          </li>
-
-<li class="dropdown">
-          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Information <span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="#">Action</a></li>
-            <li><a href="#">Another action</a></li>
-            <li><a href="#">Something else here</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">Separated link</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="#">One more separated link</a></li>
-          </ul>
-</li>
+          </li> <!-- End Contact -->
 
 
         </ul>
       </div>
-    </nav>
-    <br />
-    <div id="body-content" class="body-content"></div><!-- Footer -->
+    </nav><br>
+
+    <div class="body-content" id="body-content"></div><!-- Footer -->
 
     <nav class="navbar navbar-default navbar-fixed-bottom">
       <div class="container">
@@ -108,4 +117,5 @@
     </nav><!-- End Footer-->
   </div><!-- End Container -->
 </body>
+</html>
 </html>
