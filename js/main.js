@@ -11,7 +11,7 @@ $(document).ready(function() {
         // Use nav item name to chose which page to load
         var nav_item_name = $(this).text().toLowerCase().trim();
         var page_to_load = nav_item_name + ".html";
-        console.log(page_to_load);
+        //console.log(page_to_load);
         $("#body-content").load("pages/" + page_to_load, function() {});
 
         // Clear active nav item
@@ -21,12 +21,11 @@ $(document).ready(function() {
 
         // If nav-bar items are collapsed - small screens
         if ($(window).width() < 768) {
-            // Close Hamburger
-            try {
-                $(".navbar-toggle").click()
-            } catch (error) {
-                console.log("error: ", error.message);
-            }
+          try {
+            $(".navbar-toggle").click()
+          } catch (error) {
+            console.log("error: ", error.message);
+          }
         }
     });
 });
