@@ -5,7 +5,6 @@
   <meta charset="utf-8">
   <meta content="IE=edge" http-equiv="X-UA-Compatible">
   <meta content="width=device-width, initial-scale=1" name="viewport">
-
   <title>Integrated Scenarios</title><!-- Bootstrap -->
   <link href=
   "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/css/bootstrap.min.css" rel=
@@ -17,19 +16,17 @@
       <script src="https://oss.maxcdn.com/respond/1.4.2/respond.min.js"></script>
     <![endif]-->
   <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
-
-  <script src=
-  "https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script><!-- Latest compiled and minified JavaScript -->
-
-  <script src=
-  "https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
-  <script>
-  // jQuery Code
-    $( document ).ready(function() {
-        $( "#body-content" ).load( "pages/home.html", function() {
-        });
-    });
-  </script>
+  
+  <!-- jQuery -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.11.3/jquery.min.js"></script>
+  <!-- Bootstrap -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"></script>
+  <!-- Main JavaScript File -->
+  <script src="js/main.js"></script>
+  <!-- Bootstrap Theme -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap-theme.css">
+  <!-- Custom Style -->
+  <link rel="stylesheet" type="text/css" href="css/style.css">
 </head>
 
 <body>
@@ -38,11 +35,13 @@
       <div class="container">
         <a class="navbar-brand" href="#">Integrated Scenarios</a>
 
-        <ul class="nav navbar-nav pull-right">
+        <ul class="nav navbar-nav pull-right" id="nav-items">
           <li class="active">
-            <a href="#">Info <span class="sr-only">(current)</span></a>
+            <a href="#">Home</a>
           </li>
-
+          <li>
+            <a href="#">Info</a>
+          </li>
           <li>
             <a href="#">Data</a>
           </li>
@@ -57,8 +56,8 @@
         </ul>
       </div>
     </nav>
-
-    <div id="body-content"></div><!-- Footer -->
+    <br />
+    <div id="body-content" class="body-content"></div><!-- Footer -->
 
     <nav class="navbar navbar-default navbar-fixed-bottom">
       <div class="container">
