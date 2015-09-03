@@ -1,3 +1,12 @@
 .body-content {
 	margin-top: 60px;
+	margin-bottom: 60px;
+}
+.center {
+	margin: 0 auto;
+}
+
+.img-crop {
+	height: 100px;
+	width: 100px;
 }
