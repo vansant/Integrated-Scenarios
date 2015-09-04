@@ -3,7 +3,6 @@ $(document).ready(function() {
     // Load home page initially
     $("#body-content").load("pages/home.html", function() {});
 
-
     // On click of nav-bar items
     $("#nav-items li ").click(function() {
         // Nav item name
@@ -13,7 +12,6 @@ $(document).ready(function() {
         $("#nav-items li").removeClass("active")
             // Set nav item as active
         nav_item.addClass("active")
-
 
         // If a dropdown nav-item
         if($(nav_item).find('ul').length){
@@ -25,8 +23,6 @@ $(document).ready(function() {
         var page_to_load = nav_item_name + ".html";
         console.log(page_to_load);
         $("#body-content").load("pages/" + page_to_load, function() {});
-
-
 
         // If nav-bar items are collapsed - small screens
         if ($(window).width() < 768) {

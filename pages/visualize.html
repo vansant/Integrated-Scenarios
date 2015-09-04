@@ -1,37 +1,36 @@
 <div class="clearfix">
 	<divclass=".col-xs-12 .col-lg-12 .center" >
-	<div id="map">This is the map div</div>
+	<div id="map"></div>
 </div> 
 <script>
+var mapCanvas = document.getElementById('map');
+var mapOptions = {
+    center: new google.maps.LatLng(40, -103),
+    zoom: 5,
+    maxZoom: 17,
+    minZoom: 5,
+    mapTypeId: google.maps.MapTypeId.ROADMAP
+}
+var map = new google.maps.Map(mapCanvas, mapOptions)
 
-    var mapCanvas = document.getElementById('map');
-    var mapOptions = {
-        center: new google.maps.LatLng(40, -103),
-        zoom: 5,
-        maxZoom: 17,
-        minZoom: 5,
-        mapTypeId: google.maps.MapTypeId.ROADMAP
-    }
-    var map = new google.maps.Map(mapCanvas, mapOptions)
-
-    // On window resize
-    $(window).resize(function() {
-        var height = $(window).height();
-        var width = $("#body-content").width();
-        $('#map').css('height', (height / 2));
-        $('#map').css('width', (width / 2));
-        google.maps.event.trigger(map, "resize");
-    }).resize();
+// On window resize
+$(window).resize(function() {
+    var height = $(window).height();
+    var width = $("#body-content").width();
+    $('#map').css('height', (height / 2));
+    $('#map').css('width', (width / 2));
+    google.maps.event.trigger(map, "resize");
+}).resize();
 
 // Self-Executing Anonymous Function - learned at Google Earth Engine Summit 2015
-(function add_thredds_wms_layer(){
+(function add_thredds_wms_layer() {
 
     var wmsOptions = {
         alt: "THREDDS Server Tile",
         getTileUrl: WMSGetTileUrl,
         isPng: false,
         maxZoom: 17,
-        minZoom: 1,
+        minZoom: 5,
         name: "THREDDS Server Layer",
         tileSize: new google.maps.Size(256, 256)
     };
@@ -42,51 +41,97 @@
 })();
 
 function WMSGetTileUrl(tile, zoom) {
-      var projection = window.map.getProjection();
-      var zpow = Math.pow(2, zoom);
-      var ul = new google.maps.Point(tile.x * 256.0 / zpow, (tile.y + 1) * 256.0 / zpow);
-      var lr = new google.maps.Point((tile.x + 1) * 256.0 / zpow, (tile.y) * 256.0 / zpow);
-      var ulw = projection.fromPointToLatLng(ul);
-      var lrw = projection.fromPointToLatLng(lr);
-      //Address to the public WMS layer  must be in WGS84 - EPSG:4326
-      var baseURL = "http://thredds.northwestknowledge.net:8080/thredds/wms/macav1metdata_pr_CCSM4_r6i1p1_historical_1950_2005_WUSA_monthly_aggregated.nc?";
-      var layers = "precipitation";
-      var elevation = "0";
-      var time = "2004-01-15T00%3A00%3A00.000Z";
-      var transparent = "true";
-      var styles = "boxfill/";
-      var palette = "rainbow";
-      var srs = "EPSG:4326";
-      var colorScaleRange = "-50,50";
-      var numberColorBands = "20";
-      var logScale = "false";
-      var service = "WMS";
-      var version = "1.1.1";
-      var request = "GetMap";
-      var format = "image/png"; 
-      //Don't change unless you know what you are doing.
-      var bbox = ulw.lng() + "," + ulw.lat() + "," + lrw.lng() + "," + lrw.lat();
-      var width = "256";
-      var height = "256";
-      // Combine all parameters to build WMS URL
-      var url = baseURL + "Layers=" + layers +
-      "&ELEVATION=" + elevation +
-      "&TIME=" + time +
-      "&TRANSPARENT=" + transparent +
-      "&STYLES="+ styles + palette +
-      "&SRS="+ srs +
-      "&COLORSCALERANGE=" +colorScaleRange +
-      "&NUMCOLORBANDS=" + numberColorBands +
-      "&LOGSCALE=" + logScale +
-      "&SERVICE=" + service +
-      "&VERSION=" + version +
-      "&REQUEST=" + request +
-      "&FORMAT=" + format +
-      "&BBOX="+ bbox +
-      "&WIDTH=" + width +
-      "&HEIGHT=" + height 
-      return url;
-  }
+    var projection = window.map.getProjection();
+    var zpow = Math.pow(2, zoom);
+    var ul = new google.maps.Point(tile.x * 256.0 / zpow, (tile.y + 1) * 256.0 / zpow);
+    var lr = new google.maps.Point((tile.x + 1) * 256.0 / zpow, (tile.y) * 256.0 / zpow);
+    //console.log(zoom,zpow, ul, lr);
+
+    var ulw = projection.fromPointToLatLng(ul);
+    var lrw = projection.fromPointToLatLng(lr);
+    //Address to the public WMS layer  must be in WGS84 - EPSG:4326
+    var baseURL = "http://thredds.northwestknowledge.net:8080/thredds/wms/macav1metdata_pr_CCSM4_r6i1p1_historical_1950_2005_WUSA_monthly_aggregated.nc?";
+    var layers = "precipitation";
+    var elevation = "0";
+    var time = "2004-01-15T00%3A00%3A00.000Z";
+    var transparent = "true";
+    var styles = "boxfill/";
+    var palette = "rainbow";
+    var srs = "EPSG:4326";
+    var colorScaleRange = "-50,50";
+    var numberColorBands = "20";
+    var logScale = "false";
+    var service = "WMS";
+    var version = "1.1.1";
+    var request = "GetMap";
+    var format = "image/png";
+    //Don't change unless you know what you are doing.
+    var bbox = ulw.lng() + "," + ulw.lat() + "," + lrw.lng() + "," + lrw.lat();
+    var width = "256";
+    var height = "256";
+    // Combine all parameters to build WMS URL
+    var url = baseURL + "Layers=" + layers +
+        "&ELEVATION=" + elevation +
+        "&TIME=" + time +
+        "&TRANSPARENT=" + transparent +
+        "&STYLES=" + styles + palette +
+        "&SRS=" + srs +
+        "&COLORSCALERANGE=" + colorScaleRange +
+        "&NUMCOLORBANDS=" + numberColorBands +
+        "&LOGSCALE=" + logScale +
+        "&SERVICE=" + service +
+        "&VERSION=" + version +
+        "&REQUEST=" + request +
+        "&FORMAT=" + format +
+        "&BBOX=" + bbox +
+        "&WIDTH=" + width +
+        "&HEIGHT=" + height
+    return url;
+}
+
+// $( "#slider" ).slider();
+var opacity_slider = document.getElementById("slider-custom-control");
+// Push opacity slider onto map
+map.controls[google.maps.ControlPosition.RIGHT_TOP].push(opacity_slider);
+
+var tooltip = $('<div id="tooltip" />').css({
+    position: 'relative',
+    top: 0,
+    left: -70,
+    color: 'white',
+    background: 'black',
+    display: 'block',
+    padding: '10',
+    opacity: 1,
+    width: '60',
+    range: true,
+}).hide();
+//set initial tooltip
+tooltip.text(1);
+
+$("#slider").slider({
+    orientation: "vertical",
+    range: false,
+    max: 1,
+    min: 0,
+    step: .05,
+    animate: true,
+    value: 1,
+    slide: function(event, ui) {
+        tooltip.text(Math.round(ui.value * 100) + "% Opaque");
+        wmsMapType.setOpacity(ui.value);
+        //$('#opacity').val(ui.value);
+        console.log(ui.value);
+    },
+    change: function(event, ui) {}
+        // }).find(".ui-slider-handle").append(tooltip).hover(function() {
+        //     tooltip.show()
+        // }, function() {
+        //     tooltip.hide()
+});
 
 </script>
+<div id="slider-custom-control" style="">
+<div id="slider" style="height:50; z-index: 0; position: absolute; right: 13px;"></div>
+<div id="tooltip"></div>
 </div>
