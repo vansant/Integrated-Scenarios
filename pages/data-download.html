@@ -1,0 +1,81 @@
+<script type="text/javascript">
+  $(document).ready(function() {
+    $('.defaultTable').dragtable();
+  });
+
+  // $("table tr").click(function(e){
+  //     console.log(("Row: "+(this.rowIndex)+", Column: "+(e.toElement.cellIndex)));
+  // });
+  
+  // Get the index of the columns
+  // $('.defaultTable').find('th').each(function($index){
+  //         console.log($index);
+  // })
+
+  //Get the data from nth column in table
+  function get_column_values(n){
+    
+    // Get colum values
+    $(".defaultTable tr:gt(0) td:nth-child(" + n.toString() + ")").each(function(){
+      var column_rows = $(this).html();
+      console.log(column_rows);
+    });
+  }
+
+  // On button click process columns
+  $("#test_button").click(function(){
+      var column_number  = $("#test_input").val();
+      // console.log(column_number);
+      get_column_values(column_number);
+      
+  });
+</script>
+
+  <div>
+    <h4>Sortable Columns</h4>
+    <div>
+      <table class="defaultTable table-bordered table-condensed">
+        <thead>
+          <tr>
+            <th>Column 1</th>
+            <th>Column 2</th>
+            <th>Column 3</th>
+            <th>Column 4</th>
+            <th>Column 5</th>
+            <th>Column 6</th>
+          </tr>
+        </thead>
+
+        <tbody>
+          <tr>
+            <td>Product 1</td>
+            <td>Product 2</td>
+            <td>Product 3</td>
+            <td>Product 4</td>
+            <td>Product 5</td>
+            <td>Product 6</td>
+          </tr>
+          <tr>
+            <td>Variable 1</td>
+            <td>Variable 2</td>
+            <td>Variable 3</td>
+            <td>Variable 4</td>
+            <td>Variable 5</td>
+            <td>Variable 6</td>
+          </tr>
+          <tr>
+            <td>Variable Name 1</td>
+            <td>Variable Name 2</td>
+            <td>Variable Name 3</td>
+            <td>Variable Name 4</td>
+            <td>Variable Name 5</td>
+            <td>Variable Name 6</td>
+          </tr>
+        </tbody>
+
+      </table>
+    </div>
+  </div>
+
+<button id="test_button">Console Log Columns</button>
+<input id="test_input" type="text" value="1"></input>
