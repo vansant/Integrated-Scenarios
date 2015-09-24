@@ -1,0 +1,14 @@
+<p>
+<h3 id="meteorological-input-data">Meteorological Input Data<a class="headerlink" href="#meteorological-input-data" title="Permanent link"></a></h3>
+(Credit:<a href="http://vic.readthedocs.org/en/master/Overview/ModelOverview/">Source</a>)
+<p>VIC can use any combination of daily or sub-daily meteorological forcings, from point observations, gridded observations, or reanalysis fields.  At minimum, VIC requires daily {precipitation, max/min air temperature, and wind speed}.  VIC will derive all other needed forcings via the approach described in <a href="../../Documentation/References/#other-historical-references">Bohn et al., 2013a</a>, which includes:</p>
+<ul>
+<li>If incoming shortwave radiation or humidity are not supplied as forcings, VIC can estimate their daily average values via the algorithms of <a href="../../Documentation/References/#other-references">Kimball et al. (1997)</a>, <a href="../../Documentation/References/#other-references">Thornton and Running (1999)</a>, and <a href="../../Documentation/References/#other-references">Thornton et al. (2000)</a>. These algorithms are part of a stand-alone system called MTCLIM, produced by Steve Running's Numerical Terradynamics Simulation Group at U. Montana.</li>
+<li>If incoming longwave radiation is not supplied, VIC can estimate this via the Tennessee Valley Authority algorithm (<a href="../../Documentation/References/#other-references">TVA, 1972</a>) or the <a href="../../Documentation/References/#other-references">Prata (1996)</a> algorithm, Prata is the default.</li>
+<li>VIC can disaggregate daily forcings to sub-daily as needed, using a cubic spline to interpolate between min and max temperatures, and deriving the other variables from that (<a href="../../Documentation/References/#other-historical-references">Bohn et al., 2013a</a>)</li>
+</ul>
+
+
+<h3 id="non-meteorological-input-data">Non-Meteorological Input Data<a class="headerlink" href="#non-meteorological-input-data" title="Permanent link"></a></h3>
+<p>Can read daily timeseries of land cover information such as albedo, LAI, and partial vegetation cover fraction as forcing variables (<a href="../../Documentation/References/#other-historical-references">Bohn and Vivoni, in review</a>).</p>
+</p>

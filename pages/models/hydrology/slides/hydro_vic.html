@@ -1,0 +1,21 @@
+<p> 
+(Credit:<a href="http://vic.readthedocs.org/en/master/Overview/ModelOverview/#land-cover-and-soil">Source</a>)<br>
+<h3>VIC Hydrology Model</h3> 
+
+The VIC model (Liang et al., 1994) is a large-scale, semi-distributed hydrologic model 
+that simulates the hydrology in land-surface processes by incorporating variable vegetation, soil types and topography. It is semi-distributed in that it has grid cells, but also a channel network to handle surface/subsurface runoff. Like other land surface models, in VIC:
+<ul>
+<li>Grid cells are simulated independently of each other</li>
+<li>Inputs are time series of daily meteorological variables(precipitation, air temperature, wind speed)</li>
+<li>Water can only enter a grid cell via the atmosphere</li>
+<li>Land-atmosphere fluxes and water/energy balances at the surface are simulated at daily time steps</li>
+<li>Non-channel flow between grid cells is ignored. Once water reaches the channel network, it is assumed to stay in the channel (it cannot flow back into the soil).</li>
+</ul>
+
+<img src="http://vic.readthedocs.org/en/master/img/VIC_grid_cell_schematic.png"/><br>
+<i>Figure 1.  VIC land cover tiles and soil column, with major water and energy fluxes.</i>
+
+
+
+
+</p>

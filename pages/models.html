@@ -1,3 +1,48 @@
-<div class="row">
-	Model data will go here	
-</div>
+<div class="tabbable">
+	<!-- *******************   -->
+	<!--        NAVIGATION       -->
+	<!-- *******************   -->
+	<ul class="nav nav-tabs nav-default" id="dataTab" >
+	    <li class="active">
+		<a href="#tab-model-overview" data-toggle="tab">Model Overview</a>
+	    </li>
+	    <li> 
+		<a href="#tab-model-climate" data-toggle="tab">Climate Model</a>
+	    </li>
+	    <li> 
+		<a href="#tab-model-hydrology" data-toggle="tab">Hydrology Model</a>
+	    </li>
+	    <li> 
+		<a href="#tab-model-vegetation" data-toggle="tab">Vegetation Model</a>
+	    </li>
+	</ul>
+
+	<div class ="container-fluid">
+	    <div class="tab-content">
+		<div class="tab-pane active" id="tab-model-overview">
+			 <?php
+				include('pages/models/overview.html');
+			?>
+		</div>
+		<div class="tab-pane id="tab-model-climate"">
+			 <?php
+				include('pages/models/climate/climate_model.html');
+			?>
+		</div>
+		<div class="tab-pane id="tab-model-hydrology"">
+			 <?php
+				include('pages/models/hydrology/hydrology_model.html');
+			?>
+		</div>
+		<div class="tab-pane id="tab-model-vegetation"">
+			 <?php
+				include('pages/models/vegetation/vegetation_model.html');
+			?>
+		</div>
+		<!-- *******************   -->
+	    </div><!--end tab-content-->
+	</div><!-- end container-->                      
+</div><!--end tabbable-->
+
+
+

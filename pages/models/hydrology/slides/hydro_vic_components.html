@@ -1,0 +1,30 @@
+<p>
+(Credit:<a href="http://vic.readthedocs.org/en/master/Overview/ModelOverview/#land-cover-and-soil">Source</a>)<br>
+<h3>VIC Components</h3>
+
+
+<b>Meteorological Inputs</b><br>
+Meteorological drivers for the model are input as time series of daily variables such as precipitation, air temperature and wind speed. The grid cells are simulated independently of each other for the entire time series where water can only enter a grid cell via the atmosphere (non-channel flow between cells is ignored and water cannot flow back into the soil but stays in the channel network).
+
+<br><br>
+
+
+<b>Land Model</b><br>
+VIC’s land surface is modeled as a grid of large(>1 km), flat, uniform cells, where sub-grid parameterizations store the fraction of the cell covered by different land cover.  Topography influences on precipitation are considered through sub dividing grid cells into elevation bands, to account for variation of topography within cells, primarily for estimating mountain snow pack. VIC has a snow model for ground snow pack, snow in the vegetation canopy, and snow on top of lake ice. 
+<br><br>
+<b>Soil Model</b><br>
+VIC typically has 3 soil layers and simulates soil moisture, soil temperature, evapotranspiration from the upper-most layer, frozen soil and permafrost processes and the water table depth. 
+<br><br>
+<b>Lake/Wetland Model</b><br>
+VIC has a lake/wetland model to handle the impoundment of surface water within a grid cell.The lake's area can vary with time as a function of storage and topography (bathymetry). The lake model allows for multiple-layers, mixing and variable ice cover. The wetlands model allows seasonal inundation of wetlands as lake grows and shrinks. 
+<br><br>
+<b>Carbon Model</b><br>
+VIC has an optional carbon model that simulates photosynthesis, autotrophic respiration, and heterotrophic respiration. Plant phenology is not dynamic and biomass is not simulated. There are 3 soil carbon reservoirs: litter (residence time of 2.86 years), intermediate (residence time of 33.3 years), and slow (residence time of 1000 years). Respiration from the three soil carbon pools is estimated.
+<br><br>
+<b>VIC Outputs:</b><br>
+VIC outputs time series of many different variables from the simulation process. These include variables related to snow (snow water equivalents , snow melt), soil (moisture,temperature, heat flux), runoff(subsurface/surface,total), streamflow, evapotranspiration(water,saturated soil, short/tall vegetation), sensible/latent heat, radiation(shortwave/longwave). 
+
+<br>
+<img alt="VIC Snow Model Schematic Link" src="http://vic.readthedocs.org/en/master/img/VIC_snow_model_schematic.png" /><br>
+<i>Figure: Components in the VIC snow model</i>
+</p>

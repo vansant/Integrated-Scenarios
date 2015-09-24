@@ -1,0 +1,39 @@
+<p> 
+(Credit:<a href="http://www.slideshare.net/vishvamPancholi/seminar-on-hydrological-modelling">Source</a>)
+<h3>Hydrology Model Discretization</h3> 
+<br>
+Hydrologic models simplify our 3 dimensional world into discrete components that can
+be simulated in a computer. For these models, the land surface is divided up into discrete regions (either rectangular grid cells or a tiling of the surface into irregular regions) and the surface 
+is divided up into discrete layers(vegetation canopy and soil). Further, each region has an elevation model.
+<br><br>
+
+<table width="100%">
+<tr>
+<td width="50%">
+<img src='images/intro/hydrology/Distributed.JPG' height="200" />
+<br>
+<i>Grid cells covering a watershed in a hydrology model.</i>
+</td>
+<td width="50%">
+<img src='images/intro/hydrology/SoilLayers.png' height="200" />
+<br>
+<i>Soil and canopy layers for each grid cell.</i>
+</td>
+<td width="50%">
+<img src='images/intro/hydrology/Elevation.JPG' height="200" /><br>
+<i>Elevation differences between grid cells.(NOAA/NWS/The COMET Program)</i>
+</td>
+</tr>
+</table>
+<br><br>
+Hydrology models do some sub-grid discretization as well. 
+For example, the fraction of each grid cell that is covered by 
+different vegetation types or is covered by snow/ice is figured into the model. 
+However, outputs are reported only as averages over all of the sub-grid discretizations. 
+<br>
+<div style="text-align:center">
+<img src='images/intro/hydrology/subgrid_vegetation.png'/><br>
+</div>
+<i>Figure: Fractional coverage of vegetation cover in a grid cell of the Variable Infiltration Capacity(VIC) hydrology model.  </i>
+
+</p>

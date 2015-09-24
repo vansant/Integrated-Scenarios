@@ -1,0 +1,25 @@
+<p> 
+(Credit:<a href="http://www.slideshare.net/vishvamPancholi/seminar-on-hydrological-modelling">Source</a>)
+<h3>Hydrology Model Parameterizations: <br>Distributed vs Semi-Distributed vs Lumped</h3> 
+<br>
+
+Hydrology models are differentiated in how they parameterize the different sub-regions as either 'lumped', 'distributed' or 'semi-distributed':
+<ul>
+<li><b>Lumped:</b>
+In a lumped model, a water basin is divided into sub-basins. Parameters (i.e soil,land cover properties) are assigned to each sub-basin. However the model only outputs characteristics of each sub-basin as a weighted average over its contents. 
+</li>
+<li><b>Distributed:</b>
+In a distributed model, a water basin is divided into grid cells and parameters are assigned to 
+each grid cell. The model will keep track of and output the hydrologic properties of each grid cell. 
+This type of model generates a large amount of data and requires long run times. 
+</li>
+<li><b>Semi-Distributed:</b>
+In a semi-distributed model, some parts of the water basin are lumped and some parts of the basin are distributed. Initial parameters of the model are assigned to each grid cell, but cells with the same parameters are grouped and the model will track those grouped cells separately. 
+</li>
+</ul>
+<div style="text-align:center">
+<img src="images/intro/hydrology/lumped_distributed.jpg" height="300"/><br>
+Figure: Methods of Parameterizing Regions in Hydrologic Models (USGS)
+</div>
+
+</p>
